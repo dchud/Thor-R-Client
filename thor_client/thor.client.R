@@ -1,6 +1,9 @@
 library("httr")
 library("jsonlite")
 source("base.url.R")
+source("experiment.client.R")
+source("recommendation.client.R")
+
 
 create.experiment <- function(name, dimensions, acq.func, auth.token) {
   ## Create an experiment.
