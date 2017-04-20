@@ -7,10 +7,10 @@ create.recommendation <- function(experiment.id, auth.token, rand.prob, n.model.
   ## Get a recommendation for a point to evaluate next.
   url <- base.url("create_recommendation")
   if (missing(rand.prob))
-    rand.prob <- NULL
+    rand.prob <- NA
   if (missing(n.model.iters))
-    n.model.iters <- NULL
-  data <- list(rand_prob = rand.prob, n_model_iters = n.model.iters, auth_token = auth.token, experiment_id = experiment.id)
+    n.model.iters <- NA
+  data <- list(rand_prob = unbox(rand.prob), n_model_iters = unbox(n.model.iters), auth_token = auth.token, experiment_id = experiment.id)
   rec <- content(POST(url = url, body = data, encode = "json"))
   rec$config <- fromJSON(rec$config)
   return(rec)
