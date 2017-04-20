@@ -3,10 +3,14 @@ library("jsonlite")
 source("base.url.R")
 
 
-create.recommendation <- function(experiment.id, auth.token) {
+create.recommendation <- function(experiment.id, auth.token, rand.prob, n.model.iters) {
   ## Get a recommendation for a point to evaluate next.
   url <- base.url("create_recommendation")
-  data <- list(auth_token = auth.token, experiment_id = experiment.id)
+  if (missing(rand.prob))
+    rand.prob <- NULL
+  if (missing(n.model.iters))
+    n.model.iters <- NULL
+  data <- list(rand_prob = rand.prob, n_model_iters = n.model.iters, auth_token = auth.token, experiment_id = experiment.id)
   rec <- content(POST(url = url, body = data, encode = "json"))
   rec$config <- fromJSON(rec$config)
   return(rec)
@@ -21,7 +25,7 @@ best.configuration <- function(experiment.id, auth.token) {
   return(obs)
 }
 
-submit.observation <- function(config, target, experiment.id, auth.token) {
+submit.observation <- function(experiment.id, auth.token, config, target) {
   ## Upload a pairing of a configuration alongside an observed target variable.
   url <- base.url("submit_observation")
   data <- list(auth_token = auth.token, experiment_id = experiment.id, configuration = config, target = target)
