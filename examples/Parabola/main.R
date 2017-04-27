@@ -2,7 +2,7 @@
 source("../../thor_client/thor.client.R", chdir = TRUE)
 
 ## Authenticate with the Thor server.
-auth.token <- '$2b$12$.wA/rDDnUeNFoXOxBcJ6ze2ZzIF16ThQMM8hPfvuTwtTwZYVDlpXK'
+auth.token <- 'YOUR_AUTH_TOKEN'
 ## Create experiment.
 name <- "2-D Parabola (R)"
 dims <- data.frame("name"=c("x", "y"),"dim_type"=c("linear", "linear"), "low"=c(-1., -1.), "high"=c(1., 1.))
