@@ -5,12 +5,20 @@ source("experiment.client.R")
 source("recommendation.client.R")
 
 
-create.experiment <- function(auth.token, name, dimensions, acq.func) {
+create.experiment <- function(auth.token, name, dimensions, acq.func, overwrite) {
   ## Create an experiment.
   url <- base.url("create_experiment")
   if (missing(acq.func))
     acq.func <- "hedge"
-  data <- list(auth_token = auth.token, name = name, acq_func = acq.func, dimensions = dimensions)
+  if (missing(overwrite))
+    overwrite <- FALSE
+  data <- list(
+    auth_token = auth.token,
+    name = name,
+    acq_func = acq.func,
+    dimensions = dimensions,
+    overwrite = overwrite
+  )
   exp <- content(POST(url = url, body = data, encode = "json"))
   return(exp)
 }
