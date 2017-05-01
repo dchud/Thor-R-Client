@@ -1,6 +1,6 @@
 ## Link to the Thor MATLAB client.
+library("thorclient")
 source("franke.R")
-source("../../thor_client/thor.client.R", chdir = TRUE)
 
 
 ## Authenticate with the Thor server.

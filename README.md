@@ -5,6 +5,6 @@ This repository contains the Thor R Client, which is a client-side interface for
 ## Installation
 
 1. Clone this repository. `git clone git@github.com:JamesBrofos/Thor-R-Client.git`
-2. Install `httr`.
-3. Source this repository by running `source("path/to/Thor-R-Client-master/thor_client/thor.client.R")`.
+2. Run `library("devtools")`.
+3. Install the Thor R Client by running `install()` from within the `Thor-R-Client/thorclient/` directory.
 4. Make sure you have signed up for an account with Thor.
