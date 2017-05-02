@@ -13,3 +13,9 @@ The Thor R Client is developed and maintained by James Brofos. If you have feedb
 2. Run `library("devtools")`.
 3. Install the Thor R Client by running `install()` from within the `Thor-R-Client/thorclient/` directory.
 4. Make sure you have signed up for an account with Thor.
+
+## View Source
+
+To view the source code of the Thor R Client, please visit the dedicated GitHub page: <https://github.com/JamesBrofos/Thor-R-Client>.
+
+We also invite you to view the source code of Thor's dedicated server by visiting <https://github.com/JamesBrofos/Thor-Server>. To examine the underlying Bayesian optimization technology, please visit <https://github.com/JamesBrofos/Thor>.
