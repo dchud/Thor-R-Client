@@ -4,7 +4,7 @@ This website contains the Thor R Client, which is a client-side interface for Th
 
 The Thor R Client, like the rest of the Thor suite of Bayesian optimization tools, is provided under the MIT license.
 
-The Thor R Client is developed and maintained by James Brofos. If you have feedback for James, please contact him at [james@brofos.org](james@brofos.org).
+The Thor R Client is developed and maintained by James Brofos. If you have feedback for James, please contact him at <james@brofos.org>.
 
 
 ## Installation
