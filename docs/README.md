@@ -16,6 +16,6 @@ The Thor R Client is developed and maintained by James Brofos. If you have feedb
 
 ## View Source
 
-To view the source code of the Thor R Client, please visit the dedicated GitHub repository [https://github.com/JamesBrofos/Thor-R-Client](Thor-R-Client).
+To view the source code of the Thor R Client, please visit the dedicated GitHub repository [Thor-R-Client](https://github.com/JamesBrofos/Thor-R-Client).
 
-We also invite you to view the source code of Thor's dedicated server by visiting the [https://github.com/JamesBrofos/Thor-Server](Thor-Server) repository. To examine the underlying Bayesian optimization technology, please visit the [https://github.com/JamesBrofos/Thor](Thor) repository.
+We also invite you to view the source code of Thor's dedicated server by visiting the [Thor-Server](https://github.com/JamesBrofos/Thor-Server) repository. To examine the underlying Bayesian optimization technology, please visit the [https://github.com/JamesBrofos/Thor](Thor) repository.
