@@ -1,8 +1,10 @@
 # Thor R Client
 
-This website contains the Thor R Client, which is a client-side interface for Thor Server written in R. The Thor Server and Thor R Client together provide a light-weight and powerful architecture for Bayesian optimization of machine learning systems. The Thor R Client, like the rest of the Thor suite of Bayesian optimization tools, is provided under the MIT license.
+This website contains the Thor R Client, which is a client-side interface for Thor Server written in R. The Thor Server and Thor R Client together provide a light-weight and powerful architecture for Bayesian optimization of machine learning systems.
 
-The Thor R Client is developed and maintained by James Brofos. If you have feedback for James, please contact him at james@brofos.org.
+The Thor R Client, like the rest of the Thor suite of Bayesian optimization tools, is provided under the MIT license.
+
+The Thor R Client is developed and maintained by James Brofos. If you have feedback for James, please contact him at [james@brofos.org](james@brofos.org).
 
 
 ## Installation
