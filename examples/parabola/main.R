@@ -1,5 +1,5 @@
 ## Link to the Thor MATLAB client.
-source("../../thor_client/thor.client.R", chdir = TRUE)
+library("thorclient")
 
 ## Authenticate with the Thor server.
 auth.token <- 'YOUR_AUTH_TOKEN'

@@ -35,6 +35,8 @@ create.experiment <- function(auth.token, name, dimensions, acq.func, overwrite)
     overwrite = overwrite
   )
   exp <- content(POST(url = url, body = data, encode = "json"))
+  if ("error" %in% names(exp))
+    stop(exp$error)
   return(exp)
 }
 
@@ -54,5 +56,34 @@ experiment.for.name <- function(auth.token, name) {
   url <- base.url("experiment_for_name")
   data <- list(auth_token = auth.token, name = name)
   exp <- content(POST(url = url, body = data, encode = "json"))
+  if ("error" %in% names(exp))
+    stop(exp$error)
   return(exp)
+}
+
+for.name.or.create <- function(auth.token, name, dimensions, acq.func, overwrite) {
+  #' Query for an experiment and return it if it exists. Otherwise, if the
+  #' experiment does not exist, create it.
+  #' 
+  #' @param auth.token String containing a user's specific API key provided by 
+  #' the Thor server. This is used to authenticate with the Thor server as a 
+  #' handshake that these experiments belong to a user and can be viewed and 
+  #' edited by them.
+  #' @param name String containing the name of the experiment to create.
+  #' @param dimensions A list of dictionaries that specify the hyperparameters
+  #'  of the machine learning system.
+  #' @param acq.func A string containing the name of the acquisition function 
+  #' to use. This can be one of "hedge", "upper_confidence_bound", 
+  #' "expected_improvement", or "improvement_probability".
+  #' @param overwrite An indicator variable which will overwrite existing 
+  #' experiments with the given name if they already exist on Thor Server.
+  #' @export
+  if (missing(acq.func))
+    acq.func <- "hedge"
+  if (missing(overwrite))
+    overwrite <- FALSE
+  tryCatch(return(experiment.for.name(auth.token, name)), 
+           error = function(e) {
+             return(create.experiment(auth.token, name, dimensions, acq.func, overwrite))
+           })
 }
